@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import react from 'react'
+import { Route, Router, Switch } from 'react-router';
+import Navbar from './components/Navbar';
+import UserCard from './components/UserCard';
+import UserSign from './components/UserSign';
+import UserTable from './components/userTable';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Navbar/>
+    <Switch>
+     <Route exact path='/' component={UserSign}/>
+     <Route exact path='/usercard' component={UserCard}/>
+     <Route exact path='/usertable' component={UserTable}/>
+     </Switch>
+  
     </div>
   );
 }
-
 export default App;
